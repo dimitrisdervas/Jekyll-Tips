@@ -1,0 +1,62 @@
+---
+title: Percentage
+config:
+ - section: 
+    data:
+     htmlelement: section
+   divs:
+     - divClass: percentageClass      
+       components:
+        - component: posts-list
+          data:
+           title: Percentage
+           data-type: data-list
+           content-type: percentage      
+           fields:
+               - field: skill
+               - field: percentage
+                 data:
+                  class: percentage
+
+css: |
+  .percentage-wrapper {
+   }
+   .percentage {
+    background: #f9ce06;
+    height: 12px;
+   }
+---
+<h2>Preview</h2>
+{% include basic_components/page.html %}
+
+<h2>Code</h2>
+{% highlight text %}
+{% raw %}
+
+{% include basic_components/page.html %}
+
+{% endraw %}
+{% endhighlight %}
+
+<h2>Config FrontMatter</h2>
+
+{% highlight text %}
+
+config:
+ - section: section
+   divs:
+     - divClass: percentage      
+       components:
+        - component: posts-list.html
+          data:
+           title: Percentage
+           javascript-plugin: percentage
+           data-type: data-list
+           content-type: percentage      
+           fields:
+               - field: skill
+               - field: percentage
+
+{% endhighlight %}
+
+

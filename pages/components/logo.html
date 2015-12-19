@@ -1,0 +1,60 @@
+---
+title: Logo
+config:
+ - section: 
+    data:
+     htmlelement: section
+   divs:
+      - divClass: logoClass 
+        components:
+         - component: logo
+           title: Logo image
+           data:
+             image: /assets/logo.png
+      - divClass: logoClass
+        components:
+         - component: logo
+           title: Logo text
+           data:
+             text: Jekyll tips
+
+---
+
+{% include basic_components/page.html %}
+
+If no image it looks for text
+##Code
+{% highlight html %}
+{% raw %}
+
+ <a href="{{ site.baseurl }}"> 
+    {% if include.component-data.image %}
+       <img src="{{site.baseurl}}{{include.component-data.image}}" alt="{{ site.title }}">
+    {% else %}
+       {{ include.component-data.text}}
+    {% endif %}
+</a>    
+
+{% endraw %}
+{% endhighlight %}
+
+
+## Config FrontMatter
+
+{% highlight text %}
+{% raw %}
+
+config:
+ - section: section
+   divs:
+      - divClass: footerDateClass     
+        components:
+         - component: footerDate.html
+           data:
+             text: Copyright &copy; test
+
+
+{% endraw %}
+{% endhighlight %}
+
+

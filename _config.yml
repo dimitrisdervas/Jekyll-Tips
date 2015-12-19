@@ -1,4 +1,7 @@
-google_analytics_id: UA-37472773-14
+# Build settings
+markdown: kramdown
+
+google_analytics_id:
 collections:
   templates:
     name: Jekyll Themes
@@ -12,6 +15,14 @@ collections:
     name: Get Started Guide
     output: true
     permalink: "/:collection/:title/"
+  basic-components:
+    name: Basic Components
+    output: true
+    permalink: "/:collection/:title/"
+  html-components:
+    name: Html Components
+    output: true
+    permalink: "/:collection/:title/"    
 defaults:
   - scope:
       path: ""
@@ -23,4 +34,21 @@ defaults:
       type: guide
     values:
       layout: docs
-url: http://jekyll.tips
+  - scope:
+      path: ""
+      type: basic-components
+    values:
+      layout: docs
+  - scope:
+      path: ""
+      type: html-components
+    values:
+      layout: docs      
+  - scope:
+      path: "pages"
+      type: pages # previously `page` in Jekyll 2.2.
+    values:
+      layout: page
+      weight: 1
+      
+url: jekyll-tips.com

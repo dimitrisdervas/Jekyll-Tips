@@ -1,0 +1,24 @@
+{% include html_components/component_includes/componentContentType.html %}   
+
+ <nav>
+    <div class="nav-wrapper">
+     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+     <a href="{{site.baseurl}}/" class="brand-logo" > 
+            {% if include.component-data.image %}
+            <img src="{{include.component-data.logo.image}}" alt="{{ site.title }}">
+            {% else %}
+            <div class="logo-title">{{ include.component-data.logo.title}} {{ include.component-data.logo.subtitle}}</div>
+            {% endif %}
+         </a> 
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+       {% for menu in posts limit:{{include.component-data.limit}} offset:{{include.component-data.offset}} %}
+        <li><a href='{{ site.baseurl }}{{ menu.url }}'>{{ menu.name }}</a></li>
+        {% endfor %}
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+       {% for menu in posts limit:{{include.component-data.limit}} offset:{{include.component-data.offset}} %}
+        <li><a href='{{ site.baseurl }}{{ menu.url }}'>{{ menu.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </nav>

@@ -1,0 +1,14 @@
+ - icon: facebook
+   path: test.html
+ - icon: twitter
+   path: test.html
+ - icon: youtube
+   path: test.html
+ - icon: pinterest
+   path: test.html
+ - icon: vimeo
+   path: test.html
+ - icon: linkedin
+   path: test.html
+ - icon: github
+   path: test.html

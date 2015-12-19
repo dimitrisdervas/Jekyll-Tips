@@ -1,0 +1,331 @@
+---
+title: Ultimate
+config:
+ - section: 
+    data:
+     htmlelement: section
+   divs:
+     - divClass: form-html  
+       components:
+        - component: form
+          data:
+           title: Create Form
+           class: form
+           javascript-plugin: 
+           fieldset:
+             - legend: page
+               fields:
+                 - field: select
+                   data: 
+                     name: sectionexample
+                     label: section
+                     class: section
+                     options: 
+                         - option: section
+                         - option: div
+                         - option: header
+                         - option: footer
+                         - option: custom
+                     conditions:
+                        - conditional-option: sectionexample
+                          conditional-value: custom
+                          conditional: 
+                             - field: input
+                               data: 
+                                  name: customHtmlName
+                                  label: customHtmlName
+                                  type: text 
+                             - field: input
+                               data: 
+                                  name: customHtmlPath
+                                  label: customHtmlPath
+                                  type: text 
+                 - field: select
+                   data: 
+                      name: checksectionTitle
+                      label: sectionTitle (YES)
+                      options: 
+                         - option: yes
+                         - option: no
+                         - option: custom
+                      conditions:
+                         - conditional-option: checksectionTitle
+                           conditional-value: custom
+                           conditional:
+                             - field: input
+                               data: 
+                                  name: sectionTitle
+                                  label: sectionTitle
+                                  type: text
+                             - field: input
+                               data: 
+                                  name: sectionTitle-label
+                                  label: sectionTitle-label
+                                  type: text
+                             - field: input
+                               data: 
+                                  name: sectionTitle-link
+                                  label: sectionTitle-link
+                                  type: text
+                             - field: input
+                               data: 
+                                  name: sectionTitle-separator
+                                  label: sectionTitle-separator
+                                  type: text
+                 - field: input
+                   data: 
+                      name: checksectionSubtitle
+                      label: sectionSubtitle
+                      type: checkbox
+                      conditions:
+                         - conditional-option: checksectionSubtitle
+                           conditional-value: on
+                           conditional:
+                             - field: input
+                               data: 
+                                  name: sectionSubtitle
+                                  label: sectionSubtitle
+                                  type: text
+                             - field: input
+                               data: 
+                                  name: sectionSubtitle-label
+                                  label: sectionSubtitle-label
+                                  type: text
+                             - field: input
+                               data: 
+                                  name: sectionSubtitle-link
+                                  label: sectionSubtitle-link
+                                  type: text
+                             - field: input
+                               data: 
+                                  name: sectionSubtitle-separator
+                                  label: sectionSubtitle-separator
+                                  type: text
+                 - field: input
+                   data: 
+                      name: sectionClass
+                      label: sectionClass
+                      type: text
+                 - field: input
+                   data: 
+                      name: sectionID
+                      label: sectionID
+                      type: text
+                 - field: input
+                   data: 
+                      name: wrapperDivClass
+                      label: wrapperDivClass
+                      type: text
+                 - field: input
+                   data: 
+                      name: wrapperDivId
+                      label: wrapperDivId
+                      type: text
+                 - field: input
+                   data: 
+                      name: divClass
+                      label: divClass
+                      type: text
+             - legend: component-global
+               fields:
+                 - field: input
+                   data: 
+                      name: checkcomponentTitle
+                      label: componentTitle
+                      type: checkbox
+                      conditions:
+                         - conditional-option: checkcomponentTitle
+                           conditional-value: true
+                           conditional:
+                             - field: input
+                               data: 
+                                  name: componentTitle
+                                  label: componentTitle
+                                  type: text
+                             - field: input
+                               data: 
+                                  name: componentTitle-label
+                                  label: componentTitle-label
+                                  type: text
+                             - field: input
+                               data: 
+                                  name: componentTitle-link
+                                  label: componentTitle-link
+                                  type: text
+                             - field: input
+                               data: 
+                                  name: componentTitle-separator
+                                  label: componentTitle-separator
+                                  type: text
+                 - field: input
+                   data: 
+                      name: checkcomponentSubtitle
+                      label: componentSubTitle
+                      type: checkbox
+                      conditions:
+                         - conditional-option: checkcomponentSubtitle
+                           conditional-value: true
+                           conditional:
+                             - field: input
+                               data: 
+                                  name: componentSubtitle
+                                  label: componentSubtitle
+                                  type: text
+                             - field: input
+                               data: 
+                                  name: componentSubtitle-label
+                                  label: componentSubtitle-label
+                                  type: text
+                             - field: input
+                               data: 
+                                  name: componentSubtitle-link
+                                  label: componentSubtitle-link
+                                  type: text
+                             - field: input
+                               data: 
+                                  name: componentSubtitle-separator
+                                  label: componentSubtitle-separator
+                                  type: text
+                 - field: select
+                   data: 
+                     name: contentType
+                     label: contentType
+                     class: contentType
+                     options: 
+                         - option: data-list
+                         - option: collection
+                 - field: input
+                   data: 
+                     name: postTitle
+                     label: postTitle
+                     type: text
+                 - field: input
+                   data: 
+                     name: component-id
+                     label: Component CSS ID
+                     type: text
+                 - field: input
+                   data: 
+                     name: component-class
+                     label: Component CSS Class
+                     type: text
+             - legend: ComponentSELECT
+               fields:
+                 - field: select
+                   data: 
+                      name: selectComponent
+                      label: Select Component
+                      options: 
+                         - option: cart.html
+                         - option: checkoutLink.html
+                         - option: custom.html
+                         - option: footerDate.html
+                         - option: gmap.html
+                         - option: hr.html
+                         - option: instagram.html
+                         - option: logo.html
+                         - option: menu-dynamic.html
+                         - option: menu.html
+                         - option: posts-archive.html
+                         - option: posts-list.html
+                         - option: social.html
+                         - option: subfields.html
+                         - option: tagsDustjs.html
+                      conditions:
+                         - conditional-option: selectComponent
+                           conditional-value: posts-list
+                           conditional:
+                            - field: select
+                              data:
+                                 name: javascript-plugin
+                                 label: javascript-plugin
+                                 options:
+                                    - option: countTo
+                                    - option: owl-carousel
+                                    - option: percentage
+                                 conditions:
+                                     - conditional-option: javascript-plugin
+                                       conditional-value: countTo
+                                       conditional:
+                                           - field: input
+                                             data:
+                                                name: toField
+                                                label: to Field
+                                                type: number
+                                           - field: input
+                                             data:
+                                                name: from
+                                                label: from
+                                                type: number
+                                           - field: input
+                                             data:
+                                                name: refresh-interval
+                                                label: refresh-interval
+                                                type: number
+                                           - field: input
+                                             data:
+                                                name: speed
+                                                label: speed
+                                                type: number
+                                     - conditional-option: javascript-plugin
+                                       conditional-value: owl-carousel
+                                       conditional:
+                                           - field: input
+                                             data:
+                                                name: item
+                                                label: item
+                                                type: number
+                   - field: select
+                     data:
+                        name: groupFieldsElement
+                        label: groupFieldsElement
+                        options:
+                        - option: div
+                        - option: list
+                  - field: input
+                     data:
+                        name: limit
+                        label: posts limit
+                        type: number
+
+css: |
+   
+---
+
+{% include basic_components/page.html %}
+
+##Code
+{% highlight text %}
+{% raw %}
+
+{% include basic_components/page.html %}
+
+{% endraw %}
+{% endhighlight %}
+
+## Config FrontMatter
+
+{% highlight text %}
+
+config:
+ - section: section
+   divs:
+     - divClass: form-html  
+       components:
+        - component: form.html
+          data:
+           title: Create Form
+           class: form    
+           fields:
+               - field: input
+                 data: 
+                  class: title
+               - field: select
+                 data: 
+                  options: 
+                     - option: dorpdown
+                     - option: select
+
+{% endhighlight %}
+
+

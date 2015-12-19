@@ -1,0 +1,19 @@
+---
+title: Testing
+config:
+ - section: section
+   divs:
+      - divClass: datamenu     
+        components:
+         - component: menu-dynamic
+           data:
+            title: Data driven menu
+            class: dynamic-menu
+            icon: et-line
+            pages_path: dynamicmenu
+---
+
+
+{% include basic_components/page.html %}
+
+{{ page.url }}

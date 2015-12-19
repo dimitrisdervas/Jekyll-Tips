@@ -1,0 +1,68 @@
+---
+title: CountTo
+config:
+ - section: 
+    data:
+     htmlelement: section
+   divs:
+      - divClass: counttoclass    
+        components:
+         - component: posts-list
+           data:
+            title: CountTo
+            javascript-plugin: countTo
+            javascript-plugin-data:
+               toField: number
+               from: 0
+               refresh-interval: 50
+               speed: 5000
+            groupFieldsElement: div
+            content-type: countTo
+            data-type: data-list
+            fields:
+             - field: count
+             - field: title
+---
+
+{% include basic_components/page.html %}
+
+##Code
+{% highlight html %}
+{% raw %}
+
+{% include basic_components/page.html %}
+
+{% endraw %}
+{% endhighlight %}
+
+
+## Config FrontMatter
+
+{% highlight text %}
+{% raw %}
+
+config:
+ - section: section
+   divs:
+      - divClass: counttoclass    
+        components:
+         - component: posts-list.html
+           data:
+            title: CountTo
+            javascript-plugin: countTo # obligatory
+            javascript-plugin-data:
+               toField: number # obligatory
+               from: 0 # obligatory
+               refresh-interval: 50 # obligatory
+               speed: 5000 # obligatory
+            groupFieldsElement: div
+            content-type: countTo
+            data-type: data-list
+            fields:
+             - field: count # obligatory
+             - field: title
+
+{% endraw %}
+{% endhighlight %}
+
+

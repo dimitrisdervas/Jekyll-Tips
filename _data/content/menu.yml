@@ -1,0 +1,22 @@
+- name: home
+  url: 
+  icon: house
+  
+- name: shop
+  url: 
+  icon: compass
+  subfields:
+    - name: subhome
+      url: 
+      icon: house
+    - name: subshop
+      url: 
+      icon: compass
+  
+- name: featured
+  url: 
+  icon: star
+  
+- name: cart
+  url: 
+  icon: star

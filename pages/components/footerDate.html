@@ -1,0 +1,50 @@
+---
+title: footer Date
+config:
+ - section: 
+    data:
+     htmlelement: section
+   divs:
+      - divClass: footerDateClass     
+        components:
+         - component: footerDate
+           data:
+             text: Copyright &copy; test
+
+---
+
+<h2>PREVIEW</h2>
+{% include basic_components/page.html %}
+
+
+<h2>Code</h2>
+{% highlight html %}
+{% raw %}
+
+<div class="footer-date">
+   {{ include.component-data.text }} <script type="text/javascript">var d = new Date();document.write(d.getFullYear());</script>
+</div>
+
+{% endraw %}
+{% endhighlight %}
+
+
+<h2>Config FrontMatter</h2>
+
+{% highlight text %}
+{% raw %}
+
+config:
+ - section: section
+   divs:
+      - divClass: footerDateClass     
+        components:
+         - component: footerDate.html
+           data:
+             text: Copyright &copy; test
+
+
+{% endraw %}
+{% endhighlight %}
+
+

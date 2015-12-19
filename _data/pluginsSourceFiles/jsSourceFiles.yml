@@ -1,0 +1,48 @@
+- name: jquery
+  state: active
+  js: bower_components/jquery/dist/jquery.min.js
+  
+- name: owl-carousel
+  state: active
+  js: bower_components/owl.carousel.2/owl.carousel.min.js
+  css:
+   - css: bower_components/owl.carousel.2/assets/owl.carousel.min.css
+   - css: bower_components/owl.carousel.2/assets/owl.theme.default.min.css
+   
+- name: listjs
+  state: active
+  js: bower_components/listjs/dist/list.js
+  
+- name: masonry
+  js: bower_components/masonry/dist/masonry.pkgd.js
+  
+- name: accents
+  state: active
+  js: js/remove-accents.js
+  
+- name: countTo
+  state: active
+  js: bower_components/jquery-countTo/jquery.countTo.js
+  
+- name: materialize
+  js: bower_components/materialize/dist/js/materialize.js
+  
+- name: eqjs
+  js: bower_components/eq.js/dist/eq.min.js
+  
+- name: bootstrap
+  js: bower_components/bootstrap/dist/js/bootstrap.min.js
+
+- name: thether
+  js: bower_components/tether/dist/js/tether.min.js
+  state: active
+  
+- name: dropjs
+  js: bower_components/tether-drop/dist/js/drop.min.js
+  state: active
+  css:
+   - css: bower_components/tether-drop/dist/css/drop-theme-arrows.css
+  
+- name: conditionize
+  js: bower_components/conditionize/conditionize.jquery.js
+  state: active

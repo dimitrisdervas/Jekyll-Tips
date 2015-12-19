@@ -1,0 +1,167 @@
+---
+title: Menu - Navigation
+config:
+ - section: 
+    data:
+     htmlelement: section
+   divs:
+      - divClass: datamenu     
+        components:
+         - component: menu
+           data:
+            title: Data driven menu + Css dropdown
+            class: data-menu
+            content-type: menu
+            data-type: data-list
+            icon: et-line
+css: |
+   #primary_nav_wrap
+   {
+      margin-top:15px
+   }
+
+   #primary_nav_wrap ul
+   {
+      list-style:none;
+      position:relative;
+      float:left;
+      margin:0;
+      padding:0
+   }
+
+   #primary_nav_wrap ul a
+   {
+      display:block;
+      text-decoration:none;
+      font-weight:700;
+      font-size:12px;
+      line-height:32px;
+      padding:0 15px;
+      font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif
+   }
+   #primary_nav_wrap ul a:hover {
+      background: transparent;
+   }
+   {
+      display:block;
+      text-decoration:none;
+      font-weight:700;
+      font-size:12px;
+      line-height:32px;
+      padding:0 15px;
+      font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif
+   }
+   #primary_nav_wrap ul li
+   {
+      position:relative;
+      float:left;
+      margin:0;
+      padding:0
+   }
+
+   #primary_nav_wrap ul li.current-menu-item
+   {
+      background:#ddd
+   }
+
+   #primary_nav_wrap ul li:hover
+   {
+      background:#f6f6f6
+   }
+
+   #primary_nav_wrap ul ul
+   {
+      display:none;
+      position:absolute;
+      top:100%;
+      left:0;
+      background:#fff;
+      padding:0
+   }
+
+   #primary_nav_wrap ul ul li
+   {
+      float:none;
+      width:200px
+   }
+
+   #primary_nav_wrap ul ul a
+   {
+      line-height:120%;
+      padding:10px 15px
+   }
+
+   #primary_nav_wrap ul ul ul
+   {
+      top:0;
+      left:100%
+   }
+
+   #primary_nav_wrap ul li:hover > ul
+   {
+      display:block
+   }
+
+---
+
+{% include basic_components/page.html %}
+
+##Data
+_data/content/menu.yml
+obligatory to have these hashes
+
+{% highlight text %}
+{% raw %}
+- name: home
+  url: 
+  icon: house
+- name: shop
+  url: 
+  icon: compass
+- name: featured
+  url: 
+  icon: star
+{% endraw %}
+{% endhighlight %}
+
+## Code
+
+{% highlight html %}
+{% raw %}
+   {% include html_components/component_includes/componentContentType.html %}
+   {% for menu in posts  %}
+      <div class="menu-item" data-theme-menu="{{ include.component-data.theme }}">
+         <a href="{{ site.baseurl }}/{{ menu.url }}">{{ menu.name }}
+            {% case include.component-data.icon %}
+                {% when 'et-line' %}
+                  <i class="icon-{{ menu.icon }}"></i>
+               {% when 'font-awesome' %}
+                  <i class="fa fa-{{ menu.icon }}"></i>
+               {% endcase %}
+            </a>
+           </div>
+   {% endfor %}
+{% endraw %}
+{% endhighlight %}
+
+
+## Config FrontMatter
+
+{% highlight text %}
+{% raw %}
+config:
+ - section: section
+   divs:
+      - divClass: datamenu     
+        components:
+         - component: menu.html
+           data:
+            title: Data driven menu
+            class: data-menu
+            content-type: menu
+            data-type: data-list
+            icon: et-line
+{% endraw %}
+{% endhighlight %}
+
+

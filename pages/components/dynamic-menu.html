@@ -1,0 +1,103 @@
+---
+title: DYNAMIC menu - show pages
+config:
+ - section: 
+    data:
+     htmlelement: section
+   divs:
+      - divClass: datamenu     
+        components:
+         - component: menu-dynamic
+           data:
+            title: Data driven menu
+            class: dynamic-menu
+            icon: et-line
+            pages_path: pages
+---
+
+
+{% include basic_components/page.html %}
+Default we say weight: 1
+we can ovveride
+ in dex.html we put weight:0
+
+Show pages same depth only when I am in a page same depth
+http://www.feedingtexas.org/about/
+
+##Code
+{% highlight html %}
+{% raw %}
+<!-- DYNAMIC MENU - TODO -->
+<!-- http://thinkshout.com/blog/2014/12/creating-dynamic-menus-in-jekyll/ -->
+
+<!-- SHOW PAGES OF SITE -->
+<ul>
+   {% for node in site.pages %}
+      {% if node.url contains include.component-data.pages_path %}
+      <li><a href='{{node.url}}'>{{node.title}}</a></li>
+      {% endif %}
+   {% endfor %}
+</ul>
+
+
+<!-- http://portal-easy.codio.io:4000/pages/components/menu.html -->
+<!-- pagescomponentsmenu.html -->
+{% assign url_parts = page.url | split: '/' %}
+<!-- 4 -->
+{% assign url_parts_size = url_parts | size %}
+<!-- menu.html -->
+{% assign rm = url_parts | last %}
+<!-- /pages/components/ -->
+{% assign base_url = page.url | replace: rm %}
+
+<!-- <ul>
+{% for node in site.pages %}
+   
+  {% if node.url contains base_url %}
+    {% assign node_url_parts = node.url | split: '/' %}
+    {% assign node_url_parts_size = node_url_parts | size %}
+    {% assign filename = node_url_parts | last %}
+   
+    {% if url_parts_size == node_url_parts_size and filename != 'index.html' %}
+      <li><a href='{{node.url}}'>{{node.title}}</a></li>
+    {% endif %}
+   
+  {% endif %} -->
+   
+{% endfor %}
+</ul>
+
+{% endraw %}
+{% endhighlight %}
+
+
+## Config FrontMatter
+
+{% highlight text %}
+{% raw %}
+
+config:
+ - section: section
+   divs:
+      - divClass: slideshowDivclass     
+        components:
+         - component: posts-list.html
+           data:
+            title: Data driven menu
+            class: data-menu
+            content-type: menu
+            data-type: data-list
+            icon: et-line
+            fields:
+                 - field: image
+                   data:
+                     images-path: /assets/slideshow/
+                 - field: title
+                   data:
+                    class: slideshow-title
+                 - field: subtitle
+
+{% endraw %}
+{% endhighlight %}
+
+

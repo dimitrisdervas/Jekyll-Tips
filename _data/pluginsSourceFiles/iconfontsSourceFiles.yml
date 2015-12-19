@@ -1,0 +1,6 @@
+- name: FontAwesome
+  state: active
+  css: css/fonts/font-awesome/font-awesome.min.css
+- name: Et-Line
+  state: active
+  css: css/fonts/et-line/et-line.css

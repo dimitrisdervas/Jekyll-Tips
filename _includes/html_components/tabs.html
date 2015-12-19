@@ -1,0 +1,18 @@
+<!-- http://codepen.io/vulpesigni/pen/yyZYNy -->
+<!-- Input field Hack -->
+<div class="tabs {{include.component-data.class }}  ">
+{% for tab in include.component-data.tabs %}
+    {% assign tabID = forloop.index %}
+    {% if forloop.index == 1 %}
+      <input type="radio" name="tabs" id="tab{{tabID}}" checked="checked" />
+      {% else %}
+      <input type="radio" name="tabs" id="tab{{tabID}}"/>
+      {% endif %}
+      <label for="tab{{tabID}}">{{ tab.title }}</label>
+      <div id="tab-content{{tabID}}" class="tab-content">
+
+            {% include html_components/posts-list.html component-data=tab.data %}
+
+       </div>
+{% endfor %}
+</div>

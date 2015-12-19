@@ -1,0 +1,10 @@
+---
+title: Checkout Link
+tag: html-component, snipcart
+---
+
+{% highlight html %}
+{% raw %}
+<a href="#" class="snipcart-checkout">Click here to checkout</a>
+{% endraw %}
+{% endhighlight %}

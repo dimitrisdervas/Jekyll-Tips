@@ -1,0 +1,103 @@
+---
+title: Form
+config:
+ - section: 
+    data:
+     htmlelement: section
+   divs:
+     - divClass: form-html  
+       components:
+        - component: form
+          data:
+           title: Create Form
+           class: form   
+           fieldset:
+             - legend: page
+               fields:
+                 - field: input
+                   data: 
+                     id: input
+                     label: input test
+                     class: title
+                     type: text
+                     placeholder: testing
+                 - field: select
+                   data: 
+                      id: select
+                      label: select test
+                      options: 
+                         - option: dorpdown
+                         - option: select
+             - legend: component-global
+               fields:
+                 - field: input
+                   data: 
+                     id: input
+                     label: input test
+                     class: title
+                     type: text
+                     placeholder: testing
+                 - field: select
+                   data: 
+                      id: select
+                      label: select test
+                      options: 
+                         - option: dorpdown
+                         - option: select
+             - legend: Posts List - component
+               fields:
+                 - field: input
+                   data: 
+                     id: input
+                     label: input test
+                     class: title
+                     type: text
+                     placeholder: testing
+                 - field: select
+                   data: 
+                      id: select
+                      label: select test
+                      options: 
+                         - option: dorpdown
+                         - option: select
+css: |
+
+---
+
+{% include basic_components/page.html %}
+
+##Code
+{% highlight text %}
+{% raw %}
+
+{% include basic_components/page.html %}
+
+{% endraw %}
+{% endhighlight %}
+
+## Config FrontMatter
+
+{% highlight text %}
+
+config:
+ - section: section
+   divs:
+     - divClass: form-html  
+       components:
+        - component: form.html
+          data:
+           title: Create Form
+           class: form    
+           fields:
+               - field: input
+                 data: 
+                  class: title
+               - field: select
+                 data: 
+                  options: 
+                     - option: dorpdown
+                     - option: select
+
+{% endhighlight %}
+
+

@@ -1,0 +1,333 @@
+---
+title: Image Case - Slideshow
+config:
+ - section: 
+    data:
+      htmlelement: section
+    theme:
+      class: content-gallery
+   divs:
+      - div: 
+         theme:
+          class: frontpage-slideshow     
+        components:
+         - component: posts-list
+           data:
+            title: SLideshow Background image
+            javascript-plugin: owl-carousel
+            javascript-plugin-data:
+                 items: 1
+                 loop: true
+                 autoplay: true
+                 margin: 10
+                 dots: false
+            wrapperDiv:
+             theme:
+                class: owl-carousel owl-theme
+                id: slideshow-bg-img
+            groupFieldsElement: div
+            groupFieldsElement-data:
+             class: slideshow-item
+            content-type: slideshow
+            data-type: data-list
+            fields:
+                 - field: group
+                   background:
+                     image-hash: image
+                     images-path: /assets/slideshow/
+                   fields:
+                     - field: title
+                       data:
+                        class: slideshow-title
+      - div: 
+         theme:
+          class: frontpage-slideshow     
+        components:
+         - component: posts-list
+           data:
+            title: Slideshow Basic
+            javascript-plugin: owl-carousel
+            javascript-plugin-data:
+                 items: 1
+                 loop: true
+                 autoplay: true
+                 margin: 10
+                 dots: false
+            wrapperDiv:
+             theme:
+                class: owl-carousel owl-theme
+                id: slideshow
+            groupFieldsElement: div
+            groupFieldsElement-data:
+             class: slideshow-item
+            content-type: slideshow
+            data-type: data-list
+            fields:
+                 - field: image
+                   data:
+                     image-hash: image
+                     images-path: /assets/slideshow/
+                 - field: title
+                   data:
+                     class: slideshow-title
+ - section: 
+    data:
+      htmlelement: section
+    theme:
+      class: content-gallery
+   divs:
+      - div: 
+         theme:
+          class: gallery-slideshow     
+        components:
+         - component: posts-list
+           data:
+            title: Slideshow with Thunmbnails
+            javascript-plugin: owl-carousel
+            javascript-plugin-data:
+                 items: 1
+                 loop: true
+                 mouseDrag: true
+                 touchDrag: true
+                 nav: false
+                 margin: 10
+                 dots: false
+                 URLhashListener: true
+            wrapperDiv:
+             theme:
+                class: owl-carousel owl-theme
+                id: slideshow-thumbnails
+            groupFieldsElement: div
+            groupFieldsElement-data:
+             class: slideshow-item
+            content-type: gallery
+            folder: bungalow
+            data-type: data-list
+            fields:
+                 - field: group
+                   background:
+                     image-hash: image
+                     images-path: /assets/images/
+                     class: gallery-image
+                   fields:
+                     - field: title
+                       data:
+                        class: gallery-title
+                        addfields:
+                             - field: pagination
+      - div: 
+         theme:
+          class: slideshow-buttons
+        components:
+         - component: field
+           data:
+            content-type: strings
+            fields:
+               - field: previous
+                 data: 
+                   icon: previous
+                   class: previous
+               - field: next
+                 data: 
+                   icon: next
+                   class: next
+      - div: 
+         theme:
+          class: gallery-thumbnails
+        components:
+         - component: posts-list
+           data:
+            content-type: gallery
+            folder: bungalow
+            data-type: data-list
+            fields:
+                 - field: thumbnail
+                   data:
+                     image-hash: image
+                     images-path: /assets/thumbnails/
+                     class: gallery-thumb
+---
+
+{% include basic_components/page.html %}
+
+<h2>Variables</h2>
+{% highlight text %}
+images-path: /assets/slideshow/
+image-hash: image
+{% endhighlight %}
+
+<h2>Code</h2>
+{% highlight html %}
+{% raw %}
+
+<!-- Loop through the images and set limit -->
+   <div class="post-image {{ include.field_Data.class }}" data-eq-pts="{{ include.field_Data.eqs }}">
+      
+      {% case include.field_Data.link %}
+         {% when 'post' %}
+               <a href="{{ site.baseurl}}{{ post.url }}"> 
+         {% when 'products' %}
+                <a href="{{ site.baseurl}}products/{{ post.sku }}.html">         
+         {% endcase %}      
+                   
+     <img src="{{ site.baseurl}}{{ include.field_Data.images-path }}{{ post.[include.field_Data.image-hash] }}" alt="{{ post.alt }}">
+                 
+      </a>           
+   </div>   
+
+{% endraw %}
+{% endhighlight %}
+
+
+<h2>Config FrontMatter</h2> 
+
+{% highlight text %}
+{% raw %}
+
+config:
+ - section: 
+    data:
+      htmlelement: section
+    theme:
+      class: content-gallery
+   divs:
+      - div: 
+         theme:
+          class: frontpage-slideshow     
+        components:
+         - component: posts-list
+           data:
+            javascript-plugin: owl-carousel
+            javascript-plugin-data:
+                 items: 1
+                 loop: true
+                 autoplay: true
+                 margin: 10
+                 dots: false
+            wrapperDiv:
+             theme:
+                class: owl-carousel owl-theme
+                id: slideshow-bg-img
+            groupFieldsElement: div
+            groupFieldsElement-data:
+             class: slideshow-item
+            content-type: slideshow
+            data-type: data-list
+            fields:
+                 - field: group
+                   background:
+                     image-hash: image
+                     images-path: /assets/slideshow/
+                   fields:
+                     - field: title
+                       data:
+                        class: slideshow-title
+      - div: 
+         theme:
+          class: frontpage-slideshow     
+        components:
+         - component: posts-list
+           data:
+            javascript-plugin: owl-carousel
+            javascript-plugin-data:
+                 items: 1
+                 loop: true
+                 autoplay: true
+                 margin: 10
+                 dots: false
+            wrapperDiv:
+             theme:
+                class: owl-carousel owl-theme
+                id: slideshow
+            groupFieldsElement: div
+            groupFieldsElement-data:
+             class: slideshow-item
+            content-type: slideshow
+            data-type: data-list
+            fields:
+                 - field: image
+                   data:
+                     image-hash: image
+                     images-path: /assets/slideshow/
+                 - field: title
+                   data:
+                     class: slideshow-title
+ - section: 
+    data:
+      htmlelement: section
+    theme:
+      class: content-gallery
+   divs:
+      - div: 
+         theme:
+          class: gallery-slideshow     
+        components:
+         - component: posts-list
+           data:
+            javascript-plugin: owl-carousel
+            javascript-plugin-data:
+                 items: 1
+                 loop: true
+                 mouseDrag: true
+                 touchDrag: true
+                 nav: false
+                 margin: 10
+                 dots: false
+                 URLhashListener: true
+            wrapperDiv:
+             theme:
+                class: owl-carousel owl-theme
+                id: slideshow-thumbnails
+            groupFieldsElement: div
+            groupFieldsElement-data:
+             class: slideshow-item
+            content-type: gallery
+            folder: bungalow
+            data-type: data-list
+            fields:
+                 - field: group
+                   background:
+                     image-hash: image
+                     images-path: /assets/images/
+                     class: gallery-image
+                   fields:
+                     - field: title
+                       data:
+                        class: gallery-title
+                        addfields:
+                             - field: pagination
+      - div: 
+         theme:
+          class: slideshow-buttons
+        components:
+         - component: field
+           data:
+            content-type: strings
+            fields:
+               - field: previous
+                 data: 
+                   icon: previous
+                   class: previous
+               - field: next
+                 data: 
+                   icon: next
+                   class: next
+      - div: 
+         theme:
+          class: gallery-thumbnails
+        components:
+         - component: posts-list
+           data:
+            content-type: gallery
+            folder: bungalow
+            data-type: data-list
+            fields:
+                 - field: thumbnail
+                   data:
+                     image-hash: image
+                     images-path: /assets/thumbnails/
+                     class: gallery-thumb
+{% endraw %}
+{% endhighlight %}
+
+

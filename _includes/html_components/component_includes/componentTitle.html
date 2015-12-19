@@ -1,0 +1,31 @@
+<!--                 -->
+<!-- COMPONENT TITLE -->
+<!--                 -->
+<!-- DEBUG FILE: html_components/component_includes/componentsTitle.html -->
+<!-- Check if there is a title for the html component and print it-->
+      {% if include.component-data.title %}
+         <div class="component-header">
+         {% if include.component-data.title-data.icon %}
+         		<div class="title-icon">
+         		 	<i class="material-icons">{{include.component-data.title-data.icon}}</i>
+         		 </div>
+         {% endif %}
+
+            <div class="component-title {{include.component-data.class}}">
+            {% if include.component-data.title-data.label %}
+	            {{ include.component-data.title}} {{ include.component-data.title-data.separator}} 
+	            	<a href="{{site.baseurl}}{{ include.component-data.title-data.link }}">{{ include.component-data.title-data.label }}</a>
+	          {% elsif include.component-data.title-data.link and include.component-data.title-data.label == nill %}
+					<a href="{{site.baseurl}}{{ include.component-data.title-data.link }}">{{ include.component-data.title}}</a>
+	          {% else %}
+					{{ include.component-data.title}} {{ include.component-data.title-data.separator}}
+			   {% endif %}
+            	</div>
+
+
+               <!-- COMPONENT SUBTITLE -->
+            {% if include.component-data.subtitle %}
+               <div class="component-subtitle {{include.component-data.class}}">{{ include.component-data.subtitle}} {{ include.component-data.subtitle-data.separator}} <a href="{{site.baseurl}}{{ include.component-data.subtitle-data.link }}">{{ include.component-data.subtitle-data.label }}</a></div>
+            {% endif %}
+      </div>
+      {% endif %}

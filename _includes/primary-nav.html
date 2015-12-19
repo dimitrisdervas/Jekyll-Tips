@@ -2,27 +2,63 @@
 	<img src="/img/text-logo.svg">
 
 	<nav>
+
 		<ul>
+			<li class="nav-item top-level {% if page.url contains '/basic-components/' %}current{% endif %}">
+				<a href="{{ site.basic-components.first.url }}">Basic Components</a>
+				{% include secondary-nav-items.html items=site.basic-components %}
+			</li>
+         
+         
+         <li class="nav-item top-level {% if page.url contains '/html-components/' %}current{% endif %}">
+				<a href="{{ site.html-components.first.url }}">Html Components</a>
+				{% include secondary-nav-items.html items=site.html-components %}
+			</li>
+         
+         <li class="nav-item top-level {% if page.url contains '/pages/' %}current{% endif %}">
+				<a href="/pages/components/slideshow.html">Pages</a>
+            <ul>
+               {% for node in site.pages %}
+               		{% if item.url == page.url %}
+                        {% assign c = "current" %}
+                     {% else %}
+                        {% assign c = "" %}
+                     {% endif %}
+                 {% if node.url contains 'pages' %}
+                     <li class="nav-item {{ c }}"><a href='{{node.url}}'>{{node.title}}</a></li>
+                 {% endif %}
+               {% endfor %}
+               </ul>        
+			</li>
+         
 			<li class="nav-item top-level {% if page.url == '/' or page.url contains '/guide/' %}current{% endif %}">
 				<a href="/">Get Started Guide</a>
 				{% assign guide_items = site.guide | sort: 'order' %}
 				{% include secondary-nav-items.html items=guide_items %}
 			</li>
+         
+         
 			<li class="nav-item top-level {% if page.url contains '/tutorials/' %}current{% endif %}">
 				<a href="{{ site.tutorials.first.url}}">Tutorials</a>
 				{% include secondary-nav-items.html items=site.tutorials %}
 			</li>
+         
 			<li class="nav-item top-level {% if page.url contains '/templates/' %}current{% endif %}">
 				<a href="/templates/">Templates</a>
 			</li>
+         
 			<li class="nav-item top-level {% if page.url contains '/services/' %}current{% endif %}">
 				<a href="/services/">Services</a>
-			</li>
+			</li>       
+         
 		</ul>
 
-		<p class="maintained">
-			Proudly maintained by
-			<a target="_blank" href="http://cloudcannon.com"><img src="http://cloudcannon.com/img/logo.png"alt="CloudCannon"></a>
-		</p>
+<!--	
+   <p class="maintained">
+      Proudly maintained by
+      <a target="_blank" href="http://cloudcannon.com"><img src="http://cloudcannon.com/img/logo.png"alt="CloudCannon"></a>
+   </p>
+-->
+
 	</nav>
 </header>

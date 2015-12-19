@@ -6,6 +6,8 @@ layout: default
 	{% assign section = 'Guide' %}
 	{% assign items = site.guide | sort: 'order' %}
 {% elsif page.url contains '/tutorials/' %}
+	{% assign section = 'Examples' %}
+{% elsif page.url contains '/tutorials/' %}
 	{% assign section = 'Tutorials' %}
 	{% assign items = site.tutorials %}
 {% elsif page.url contains '/services/' %}
@@ -19,12 +21,36 @@ layout: default
 		{% if items %}
 			{% include section-nav.html items=items %}
 		{% endif %}
+      
+      {% if  page.url contains 'pages' %}
+            <!-- http://portal-easy.codio.io:4000/pages/components/menu.html -->
+      <!-- pagescomponentsmenu.html -->
+            {% assign url_parts = page.url | split: '/' %}
+            <!-- 4 -->
+            {% assign url_parts_size = url_parts | size %}
+            <!-- menu.html -->
+            {% assign rm = url_parts | last %}
+            <!-- /pages/components/ -->
+            {% assign base_url = page.url | replace: rm %}
 
+            <ul>
+            {% for node in site.pages %}
+              {% if node.url contains base_url %}
+                {% assign node_url_parts = node.url | split: '/' %}
+                {% assign node_url_parts_size = node_url_parts | size %}
+                {% assign filename = node_url_parts | last %}
+                {% if url_parts_size == node_url_parts_size and filename != 'index.html' %}
+                  <li><a href='{{node.url}}'>{{node.title}}</a></li>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+            </ul>
+      {% endif %}
+      
 		<article class="content contains-screenshots">
 			<h2>{% if page.heading %}{{ page.heading }}{% else %}{{ page.title }}{% endif %}</h2>
 			{{ content }}
 
-			{% include disqus.html %}
 		</article>
 	</div>
 </section>

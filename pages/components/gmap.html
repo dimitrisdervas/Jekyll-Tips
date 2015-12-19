@@ -1,0 +1,64 @@
+---
+title: Maps
+config:
+ - section: 
+    data:
+     htmlelement: section
+   divs:
+      - divClass: mapdivclass    
+        components:
+         - component: gmap
+           data:
+            title: Map
+            javascript-plugin: gmap
+            javascript-plugin-data:
+              id: map-canvas
+              class: map-class
+              gmapFilePath: googleMap.js
+              apiKey: AIzaSyAljVUJ_BKWrysX3Jsh7jP98qpRCShNuK4
+            class: gmap
+
+---
+
+{% include basic_components/page.html %}
+
+##Code
+{% highlight html %}
+{% raw %}
+
+{% include basic_components/page.html %}
+
+{% endraw %}
+{% endhighlight %}
+
+##Google Map Generator
+https://mapbuildr.com/buildr
+
+Copy the code inside the script in a file inside the _includes/js
+
+
+## Config FrontMatter
+
+{% highlight text %}
+{% raw %}
+
+config:
+ - section: section
+   divs:
+      - divClass: mapdivclass    
+        components:
+         - component: gmap.html
+           data:
+            title: Map
+            javascript-plugin: gmap
+            javascript-plugin-data:
+              id: map-canvas # id for the div
+              class: map-class
+              gmapFilePath: googleMap.js #_includes/js/googleMap.js
+            class: gmap
+---
+
+{% endraw %}
+{% endhighlight %}
+
+

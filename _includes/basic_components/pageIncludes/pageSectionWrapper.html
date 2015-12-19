@@ -1,0 +1,20 @@
+<!-- DEBUG FILE: html_components/basic_components/pageIncludes/pageSectionWrapper.html -->
+
+<!--       -->
+<!-- ALIAS -->
+<!--       -->
+{% assign section.wrapperSection.theme = %}
+
+
+<!--                  -->
+<!--  SECTION WRAPPER -->
+<!--                  -->
+{% if section.wrapperSection %}
+   {% capture wrapperSection %}<div  {% include basic_components/pageIncludes/themeElement.html elementData=section.wrapperSection.theme %}>{% endcapture%}
+   {% capture wrapperSectionEnd %}</div>{% endcapture %}
+{% else %}
+   {% capture wrapperSection %}{% endcapture %}
+   {% capture wrapperSectionEnd %}{% endcapture %}
+{% endif%}
+
+{{ wrapperSection }}

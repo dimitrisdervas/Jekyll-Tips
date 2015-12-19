@@ -1,0 +1,58 @@
+---
+title: Posts List
+config:
+ - section: 
+    data:
+     htmlelement: section
+   divs:
+     - divClass: posts-list      
+       components:
+        - component: posts-list
+          data:
+           title: GET STARTED GUIDE
+           class: component
+           limit: 4
+           content-type: guide      
+           fields:
+               - field: title
+                 data: 
+                  class: title
+                  link: posts
+---
+
+{% include basic_components/page.html %}
+
+##Code
+{% highlight text %}
+{% raw %}
+
+{% include basic_components/page.html %}
+
+{% endraw %}
+{% endhighlight %}
+
+## Config FrontMatter
+
+{% highlight text %}
+
+posts-list:
+ - section: section
+   divs:
+     - divClass: posts-list      
+       components:
+        - component: posts-list.html
+          data:
+           title: Posts Lists
+           groupFieldsElement: list
+           class: component
+           limit: 4
+           content-type: guide      
+           fields:
+               - field: title
+                 data: 
+                  class: title
+                  link: posts
+
+{% endhighlight %}
+
+
