@@ -7,14 +7,14 @@
 				<span class="prev disabled"></span>
 			{% else %}
 				{% assign prev_index = forloop.index0 | minus: 1 %}
-				<a href="{{ include.items[prev_index].url }}" class="prev"></a>
+				<a href="{{site.baseurl}}{{ include.items[prev_index].url }}" class="prev"></a>
 			{% endif %}
 
 			{% if forloop.last %}
 				<span class="next disabled"></span>
 			{% else %}
 				{% assign next_index = forloop.index0 | plus: 1 %}
-				<a href="{{ include.items[next_index].url }}" class="next"></a>
+				<a href="{{site.baseurl}}{{ include.items[next_index].url }}" class="next"></a>
 			{% endif %}
 
 			{% break %}

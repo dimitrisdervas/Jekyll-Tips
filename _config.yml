@@ -1,3 +1,4 @@
+baseurl: "/Jekyll-Tips" 
 # Build settings
 markdown: kramdown
 
