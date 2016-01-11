@@ -1,0 +1,48 @@
+---
+title: Flexbox - Siteheader
+csssrc: siteheader
+config:
+ - section: 
+    data:
+     htmlelement: section
+    theme:
+      class: siteHeader      
+   divs:
+     - div:
+        theme:
+          class: siteHeader__section
+       components:
+        - component: logo
+          data:
+            wrapperDiv:
+               theme:
+                  class: "siteHeader__item siteHeaderLogo"
+            text: Σχολή Χατζήβεη
+        - component: posts-list
+          data:
+           class: component
+           content-type: menu
+           data-type: data-list
+           fields:
+               - field: name
+                 data: 
+                  class: siteHeader__item siteHeaderButton
+                  link: posts
+     - div:
+        theme:
+          class: siteHeader__section
+       components:
+        - component: posts-list
+          data:
+           class: component
+           limit: 1
+           content-type: menu
+           data-type: data-list
+           fields:
+               - field: name
+                 data: 
+                  class: siteHeader__item siteHeaderButton
+                  link: posts
+---
+
+{% include basic_components/page.html %}

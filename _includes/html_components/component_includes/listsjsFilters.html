@@ -1,16 +1,22 @@
 <!--                   -->
 <!-- LIST.js - FILTERS -->
 <!--                   -->
-{% if include.component-data.javascript-plugin == 'list.js'  %}
+{% if include.component-data.javascript-plugin == 'listjs'  %}
 
    <div id="testlistsjs">
+<!--       Search -->
+        <input class="search" placeholder="Search" />
+  <button class="sort" data-sort="category">
+    Sort by name
+  </button>
+      
       <!--    Filters for the listsjs  -->
       <div class="filter-categories">
          <ul>
        {% for element in include.component-data.javascript-plugin-data.filters %}     
             {% for filter in element.categories %}
                   <li id="filter-{{ filter.filter | slugify }}" >
-                    {{ filter.filter }}
+                           {{ filter.filter }}
                      </li>
                {% endfor %}
          {% endfor %}    

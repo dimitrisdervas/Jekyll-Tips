@@ -1,5 +1,6 @@
 ---
-title: footer Date
+title: footerDate
+component: footerDate
 config:
  - section: 
     data:
@@ -9,24 +10,16 @@ config:
         components:
          - component: footerDate
            data:
-             text: Copyright &copy; test
+             text-before: Copyright &copy; test
+             text-after: All rights reserved.
 
 ---
 
-<h2>PREVIEW</h2>
+##PREVIEW
 {% include basic_components/page.html %}
 
 
-<h2>Code</h2>
-{% highlight html %}
-{% raw %}
-
-<div class="footer-date">
-   {{ include.component-data.text }} <script type="text/javascript">var d = new Date();document.write(d.getFullYear());</script>
-</div>
-
-{% endraw %}
-{% endhighlight %}
+## [See Component Code]({{site.baseurl}}/html-components/{{page.component}})
 
 
 <h2>Config FrontMatter</h2>
@@ -35,13 +28,16 @@ config:
 {% raw %}
 
 config:
- - section: section
+ - section: 
+    data:
+     htmlelement: section
    divs:
       - divClass: footerDateClass     
         components:
-         - component: footerDate.html
+         - component: footerDate
            data:
-             text: Copyright &copy; test
+             text-before: Copyright &copy; test
+             text-after: All rights reserved.
 
 
 {% endraw %}

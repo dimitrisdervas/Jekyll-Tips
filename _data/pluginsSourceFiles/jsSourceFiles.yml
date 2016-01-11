@@ -12,6 +12,10 @@
 - name: listjs
   state: active
   js: bower_components/listjs/dist/list.js
+
+- name: lunrjs
+  state: active
+  js: bower_components/lunr.js/lunr.min.js
   
 - name: masonry
   js: bower_components/masonry/dist/masonry.pkgd.js

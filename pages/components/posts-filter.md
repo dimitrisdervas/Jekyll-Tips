@@ -11,9 +11,11 @@ config:
          data:
           title: services
           id: filters-component
-          groupFieldsElement: list
           content-type: services
           data-type: collection
+          groupFieldsElement: ul
+          groupFieldsElement-data-ul:
+               class: list
           javascript-plugin: listjs
           javascript-plugin-data:
              filters:   
@@ -22,7 +24,7 @@ config:
                  - filter: all
               - element: category
                 categories:
-                 - filter: newsletters
+                 - filter: Newsletters
                  - filter: Analytics
                  - filter: Community
                  - filter: Backends
@@ -34,7 +36,7 @@ config:
            - field: image
              data:
                link: post
-               collection-hash: image_path
+               image-hash: image_path
            - field: name
              data:
                link: post
@@ -46,6 +48,7 @@ scss: |
              float:left;
              padding: 10px;
              list-style-type: none;
+             cursor: pointer;
          }
 
 ---

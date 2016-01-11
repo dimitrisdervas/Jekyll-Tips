@@ -6,8 +6,6 @@ sass:
 
 {% highlight html %}
 {% raw %}
-
    <div id="instafeed"></div>
-   
 {% endraw %}
 {% endhighlight %}

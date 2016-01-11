@@ -25,20 +25,20 @@
 {% assign section.divs = %}
 
 <!-- CASES SECTION NAME -->
-   <!-- Check for custom staff -->
+<!-- Check for custom staff -->
    {% case section.customHtmlName %}
-   <!-- Check for hr section -->
+<!-- Check for hr section -->
       {% when 'hr'%}   <hr>
-   <!-- Check for custom html section -->
+<!-- Check for custom html section -->
       {% when 'custom' %}   {% include {{section.customHtmlPath}} %}
-   <!-- End section.name case -->
+<!-- End section.name case -->
    {% else %}
 <!--               -->
 <!-- SECTION TITLE -->
 <!--               -->
 <!-- DEBUG FILE: html_components/basic_components/page.html -->
 <!-- INCLUDE basic_components/pageIncludes/title.html -->
-    {% include basic_components/pageIncludes/title.html component-data=section.sectionTitle.data element=section %}
+{% include basic_components/pageIncludes/title.html component-data=section.sectionTitle.data element=section %}
 
 
 <!--                  -->
@@ -127,11 +127,11 @@
                         {{ divClassElementEnd }}
                      <!--  End DIVS LOOP -->
                      {% endfor %}
-                <!-- END section -->
+<!-- END section -->
             </{{section.section.data.htmlelement}}>
-           <!-- EndSection name cases -->
+<!-- EndSection name cases -->
         {% endcase %}
-      <!-- SECTION WRAPPER END -->
+<!-- SECTION WRAPPER END -->
    {{ wrapperSectionEnd }}
-  <!-- End loop in sections -->
+<!-- End loop in sections -->
 {% endfor %}

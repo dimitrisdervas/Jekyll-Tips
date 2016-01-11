@@ -1,12 +1,10 @@
 ---
 title: Gmap
-tag: html-component
+tag: html-component, gmap
 ---
 
 {% highlight html %}
 {% raw %}
-
-<div id="map-canvas" class="map-canvas"></div>
-
+   <div id="map-canvas" class="map-canvas"></div>
 {% endraw %}
 {% endhighlight %}

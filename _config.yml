@@ -1,6 +1,7 @@
 baseurl: "/Jekyll-Tips" 
 # Build settings
 markdown: kramdown
+highlighter: pygments
 
 google_analytics_id:
 collections:
@@ -23,7 +24,7 @@ collections:
   html-components:
     name: Html Components
     output: true
-    permalink: "/:collection/:title/"    
+    permalink: "/:collection/:title/"   
 defaults:
   - scope:
       path: ""

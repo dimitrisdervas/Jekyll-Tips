@@ -19,7 +19,8 @@
                {% when 'gmap' %}
                   <script src="https://maps.googleapis.com/maps/api/js?key={{ component.data.javascript-plugin-data.apiKey }}"
   type="text/javascript"></script>
-
+               {% when 'lunrjs' %}
+                  <script type="text/javascript">{% include basic_components/javascriptPluginsCases/lunrjs.js lunrjsData= component.data.javascript-plugin-data %}</script>
                 {% when 'photoswipe' %}
                   <script>
                       {% include basic_components/javascriptPluginsCases/photoswipe.js photoswipeData= component.data.javascript-plugin-data %}
@@ -52,11 +53,12 @@
                      {% when 'countTo' %}
                         {% include basic_components/javascriptPluginsCases/countTo.js countToData= component.data.javascript-plugin-data %}
 
-                     {% when 'list.js' %}
+                     {% when 'listjs' %}
                         {% include basic_components/javascriptPluginsCases/listjs.js listjsData= component.data.javascript-plugin-data %}
 
                      {% when 'jplist' %}
                         {% include basic_components/javascriptPluginsCases/jplist.js jplistData= component.data.javascript-plugin-data %}
+                        
 
                      {% when 'masonry' %}
 

@@ -5,12 +5,15 @@ config:
     data:
      htmlelement: section
    divs:
-      - divClass: datamenu     
+      - div: 
+         theme:
+            class: datamenu
         components:
          - component: menu-dynamic
            data:
             title: Data driven menu
-            class: dynamic-menu
+            theme:
+               class: dynamic-menu
             icon: et-line
             pages_path: pages
 ---

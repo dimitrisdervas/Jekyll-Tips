@@ -17,11 +17,12 @@
      <style>
       {{ page.css  }}
    </style>    
+   
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
    <link rel="stylesheet" href="{{site.baseurl}}/css/components.css">   
    <link rel="stylesheet" href="{{site.baseurl}}/css/styles.css">
+   <link rel="stylesheet" href="{{site.baseurl}}/css/pages/{{ page.csssrc }}.css ">
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">     
-  
+   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">    
                            
 </head>

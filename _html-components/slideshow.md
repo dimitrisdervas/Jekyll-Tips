@@ -6,8 +6,6 @@ tag: html-component
 Create a slideshow
 {% highlight html %}
 {% raw %}
-
-<!-- Call the slideshow-id -->
 <div id="{{ include.component-data.slideshow-id }}" class="owl-carousel" data-theme-slideshow="{{ include.component-data.theme }}"> 
    {% case include.component-data.slideshow-data %}
 <!-- IMAGES -->
@@ -70,8 +68,6 @@ Create a slideshow
                   {% endfor %}
                </div>
             {% endfor %}
-      {% endcase%}
-      
-
+      {% endcase%}    
 {% endraw %}
 {% endhighlight %}

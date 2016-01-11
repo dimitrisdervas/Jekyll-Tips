@@ -1,0 +1,39 @@
+---
+title: Lunr.js - Search
+component: search
+config:
+ - section: 
+    data:
+     htmlelement: section
+   divs:
+      - div:      
+         theme:
+          class: search
+        components:
+         - component: lunrjs
+           data:
+            content-type: services
+            data-type: collection
+            javascript-plugin: lunrjs
+            javascript-plugin-data:               
+               index-fields:
+                  - field: link
+                  - field: name
+                  - field: category
+               reference-fields:
+                  - field: link
+                  - field: name
+                  - field: category               
+               results: >
+                  '<div class="result"><img src="'+store[ref].image+'" alt="'+store[ref].name+'" class="result-img"><div class="result-body"><a href="'+store[ref].link+'" class="<post->                             </post->title">'+store[ref].name+'</a><div class="post-date small">'+store[ref].category+' &times; '+store[ref].date+'</div><p>'+store[ref].excerpt+'</p></div>'
+               
+---
+
+## FROM
+http://katydecorah.com/code/lunr-and-jekyll/
+https://github.com/katydecorah/katydecorah.github.io
+
+
+<input placeholder="Search&hellip;" type="search" id="search" class="search-input">
+
+<div id="results" class="all-posts results"></div>

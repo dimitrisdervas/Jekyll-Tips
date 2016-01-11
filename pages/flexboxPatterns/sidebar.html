@@ -1,0 +1,42 @@
+---
+title: Flexbox - Sidebar
+csssrc: sidebar
+config:
+ - section: 
+    data:
+     htmlelement: section
+    theme:
+      class: sideBar      
+   divs:
+     - div:
+        theme:
+          class: sideBar__section
+       components:
+        - component: posts-list
+          data:
+           class: component
+           content-type: menu
+           data-type: data-list
+           fields:
+               - field: name
+                 data: 
+                  class: sideBar__item
+                  link: posts
+     - div:
+        theme:
+          class: sideBar__section
+       components:
+        - component: posts-list
+          data:
+           class: component
+           limit: 1
+           content-type: menu
+           data-type: data-list
+           fields:
+               - field: name
+                 data: 
+                  class: sideBar__item
+                  link: posts
+---
+
+{% include basic_components/page.html %}
